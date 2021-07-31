@@ -314,7 +314,7 @@ class QFunction(BaseModel):
             Sample the first index, and then sample the second according to a geometric distribution with parameter p 
             """
             i0 = torch.randint(0, tlen-1, (bs,), device=self.get_device(), dtype=torch.long)
-            dist = torch.distributions.geometric.Geometric(self._hp.geom_sample_p).sample((bs,)).to(self.get_device()).long()
+            dist = torch.distributions.geometric.Geometric(self._hp.geom_sample_p).sample((bs,)).to(self.get_device()).long() + 1
             return i0, torch.clamp(i0+dist, max=tlen-1)
         elif sampling_strat == 'half_unif_half_first':
             """

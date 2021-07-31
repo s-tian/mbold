@@ -11,7 +11,11 @@ this repository will be sufficient.
 To install the package, clone the repository and run `pip install -e .` from the main directory containing `setup.py`.
 
 Install Meta-World: Please see the instructions [here](https://github.com/rlworkgroup/metaworld) to install Meta-World to use the simulated
-environments.
+environments. __Note:__ The latest version of Meta-World is incompatible with this codebase. Please use a commit with hash 56e7ef2c52b275325f2409df7f6c07ad09b1cc59. As an example: 
+
+```
+pip install git+https://github.com/rlworkgroup/metaworld.git@56e7ef2c52b275325f2409df7f6c07ad09b1cc59#egg=metaworld
+```
 
 Installing FAISS: To perform GPU-enabled negative training example sampling, this code uses the [FAISS](https://github.com/facebookresearch/faiss) library. Please
 see [this document](https://github.com/facebookresearch/faiss/blob/master/INSTALL.md) for information about how to install the GPU version 
